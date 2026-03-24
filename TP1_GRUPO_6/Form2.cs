@@ -58,5 +58,22 @@ namespace TP1_GRUPO_6
                 MessageBox.Show("Seleccionar un nombre", "Alerta");
             }
         }
+
+        private void btnPasarTodo_Click(object sender, EventArgs e)
+        {
+            if (lsbPersonas.Items.Count > 0)
+            {
+                foreach (var item in lsbPersonas.Items)
+                {
+                    lsbResultado.Items.Add(item);
+                }
+
+                lsbPersonas.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("No hay nombres para transferir");
+            }
+        }
     }
 }

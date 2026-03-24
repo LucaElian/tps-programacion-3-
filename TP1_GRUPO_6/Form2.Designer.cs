@@ -34,6 +34,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnPasarValor = new System.Windows.Forms.Button();
             this.lsbResultado = new System.Windows.Forms.ListBox();
+            this.btnPasarTodo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbPersonas
@@ -76,9 +77,9 @@
             // btnPasarValor
             // 
             this.btnPasarValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPasarValor.Location = new System.Drawing.Point(371, 153);
+            this.btnPasarValor.Location = new System.Drawing.Point(371, 173);
             this.btnPasarValor.Name = "btnPasarValor";
-            this.btnPasarValor.Size = new System.Drawing.Size(62, 35);
+            this.btnPasarValor.Size = new System.Drawing.Size(62, 45);
             this.btnPasarValor.TabIndex = 14;
             this.btnPasarValor.Text = ">";
             this.btnPasarValor.UseVisualStyleBackColor = true;
@@ -92,11 +93,23 @@
             this.lsbResultado.Size = new System.Drawing.Size(271, 277);
             this.lsbResultado.TabIndex = 15;
             // 
+            // btnPasarTodo
+            // 
+            this.btnPasarTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasarTodo.Location = new System.Drawing.Point(371, 245);
+            this.btnPasarTodo.Name = "btnPasarTodo";
+            this.btnPasarTodo.Size = new System.Drawing.Size(62, 46);
+            this.btnPasarTodo.TabIndex = 16;
+            this.btnPasarTodo.Text = ">>";
+            this.btnPasarTodo.UseVisualStyleBackColor = true;
+            this.btnPasarTodo.Click += new System.EventHandler(this.btnPasarTodo_Click);
+            // 
             // Ejercicio1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPasarTodo);
             this.Controls.Add(this.lsbResultado);
             this.Controls.Add(this.btnPasarValor);
             this.Controls.Add(this.lsbPersonas);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnPasarValor;
         private System.Windows.Forms.ListBox lsbResultado;
+        private System.Windows.Forms.Button btnPasarTodo;
     }
 }
