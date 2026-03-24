@@ -28,21 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lsbPersonas = new System.Windows.Forms.ListBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lsbPersonas
+            // 
+            this.lsbPersonas.FormattingEnabled = true;
+            this.lsbPersonas.Location = new System.Drawing.Point(79, 101);
+            this.lsbPersonas.Name = "lsbPersonas";
+            this.lsbPersonas.Size = new System.Drawing.Size(271, 277);
+            this.lsbPersonas.TabIndex = 13;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAgregar.Location = new System.Drawing.Point(649, 30);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 12;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(235, 32);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(382, 20);
+            this.txtNombre.TabIndex = 11;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNombre.Location = new System.Drawing.Point(76, 34);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(153, 18);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Ingrese un nombre:";
             // 
             // Ejercicio1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lsbPersonas);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Ejercicio1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ejercicio1_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lsbPersonas;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

@@ -23,5 +23,17 @@ namespace TP1_GRUPO_6
         {
             main.Show();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text.Trim();
+
+            if (nombre != "")
+            {
+                lsbPersonas.Items.Add(nombre);
+            }
+            else
+                MessageBox.Show("Ingresar un nombre", "Alerta");
+        }
     }
 }
