@@ -32,6 +32,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnPasarValor = new System.Windows.Forms.Button();
+            this.lsbResultado = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lsbPersonas
@@ -71,16 +73,37 @@
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Ingrese un nombre:";
             // 
+            // btnPasarValor
+            // 
+            this.btnPasarValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasarValor.Location = new System.Drawing.Point(371, 153);
+            this.btnPasarValor.Name = "btnPasarValor";
+            this.btnPasarValor.Size = new System.Drawing.Size(62, 35);
+            this.btnPasarValor.TabIndex = 14;
+            this.btnPasarValor.Text = ">";
+            this.btnPasarValor.UseVisualStyleBackColor = true;
+            this.btnPasarValor.Click += new System.EventHandler(this.btnPasarValor_Click);
+            // 
+            // lsbResultado
+            // 
+            this.lsbResultado.FormattingEnabled = true;
+            this.lsbResultado.Location = new System.Drawing.Point(453, 101);
+            this.lsbResultado.Name = "lsbResultado";
+            this.lsbResultado.Size = new System.Drawing.Size(271, 277);
+            this.lsbResultado.TabIndex = 15;
+            // 
             // Ejercicio1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lsbResultado);
+            this.Controls.Add(this.btnPasarValor);
             this.Controls.Add(this.lsbPersonas);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ejercicio1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio1";
@@ -96,5 +119,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnPasarValor;
+        private System.Windows.Forms.ListBox lsbResultado;
     }
 }

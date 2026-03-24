@@ -45,5 +45,18 @@ namespace TP1_GRUPO_6
             else
                 MessageBox.Show("Ingresar un nombre", "Alerta");
         }
+
+        private void btnPasarValor_Click(object sender, EventArgs e)
+        {
+            if (lsbPersonas.SelectedItem != null)
+            {
+                lsbResultado.Items.Add(lsbPersonas.SelectedItem);
+                lsbPersonas.Items.Remove(lsbPersonas.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Seleccionar un nombre", "Alerta");
+            }
+        }
     }
 }
