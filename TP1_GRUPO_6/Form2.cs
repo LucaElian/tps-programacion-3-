@@ -28,9 +28,19 @@ namespace TP1_GRUPO_6
         {
             string nombre = txtNombre.Text.Trim();
 
+            if (nombre.Length > 0)
+                nombre = char.ToUpper(nombre[0]) + nombre.Substring(1).ToLower();
+
             if (nombre != "")
             {
-                lsbPersonas.Items.Add(nombre);
+                if (!lsbPersonas.Items.Contains(nombre))
+                {
+                    lsbPersonas.Items.Add(nombre);
+                }
+                else
+                {
+                    MessageBox.Show("Nombre repetido.", "Alerta");
+                }
             }
             else
                 MessageBox.Show("Ingresar un nombre", "Alerta");
