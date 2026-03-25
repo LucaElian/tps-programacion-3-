@@ -35,6 +35,7 @@
             this.btnPasarValor = new System.Windows.Forms.Button();
             this.lsbResultado = new System.Windows.Forms.ListBox();
             this.btnPasarTodo = new System.Windows.Forms.Button();
+            this.tbnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbPersonas
@@ -104,11 +105,23 @@
             this.btnPasarTodo.UseVisualStyleBackColor = true;
             this.btnPasarTodo.Click += new System.EventHandler(this.btnPasarTodo_Click);
             // 
+            // tbnVolver
+            // 
+            this.tbnVolver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tbnVolver.Location = new System.Drawing.Point(361, 394);
+            this.tbnVolver.Name = "tbnVolver";
+            this.tbnVolver.Size = new System.Drawing.Size(81, 23);
+            this.tbnVolver.TabIndex = 17;
+            this.tbnVolver.Text = "Volver";
+            this.tbnVolver.UseVisualStyleBackColor = true;
+            this.tbnVolver.Click += new System.EventHandler(this.tbnVolver_Click);
+            // 
             // Ejercicio1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(793, 433);
+            this.Controls.Add(this.tbnVolver);
             this.Controls.Add(this.btnPasarTodo);
             this.Controls.Add(this.lsbResultado);
             this.Controls.Add(this.btnPasarValor);
@@ -135,5 +148,6 @@
         private System.Windows.Forms.Button btnPasarValor;
         private System.Windows.Forms.ListBox lsbResultado;
         private System.Windows.Forms.Button btnPasarTodo;
+        private System.Windows.Forms.Button tbnVolver;
     }
 }

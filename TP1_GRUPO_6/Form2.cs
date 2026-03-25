@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,13 +30,17 @@ namespace TP1_GRUPO_6
             string nombre = txtNombre.Text.Trim();
 
             if (nombre.Length > 0)
-                nombre = char.ToUpper(nombre[0]) + nombre.Substring(1).ToLower();
+                
+                nombre = nombre.ToLower();
+                nombre = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombre);
 
             if (nombre != "")
             {
                 if (!lsbPersonas.Items.Contains(nombre))
                 {
                     lsbPersonas.Items.Add(nombre);
+                    txtNombre.Text = "";
+                    txtNombre.Focus();
                 }
                 else
                 {
@@ -74,6 +79,11 @@ namespace TP1_GRUPO_6
             {
                 MessageBox.Show("No hay nombres para transferir");
             }
+        }
+
+        private void tbnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
