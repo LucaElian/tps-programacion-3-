@@ -29,23 +29,24 @@ namespace TP1_GRUPO_6
         {
             string nombre = txtNombre.Text.Trim();
 
+            while (nombre.Contains("  "))
+                nombre = nombre.Replace("  ", " ");
+
             if (nombre.Length > 0)
-                
+            {
                 nombre = nombre.ToLower();
                 nombre = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombre);
+            }
 
             if (nombre != "")
             {
                 if (!lsbPersonas.Items.Contains(nombre))
-                {
                     lsbPersonas.Items.Add(nombre);
-                    txtNombre.Text = "";
-                    txtNombre.Focus();
-                }
                 else
-                {
                     MessageBox.Show("Nombre repetido.", "Alerta");
-                }
+
+                txtNombre.Text = "";
+                txtNombre.Focus();
             }
             else
                 MessageBox.Show("Ingresar un nombre", "Alerta");
