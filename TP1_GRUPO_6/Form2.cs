@@ -88,7 +88,7 @@ namespace TP1_GRUPO_6
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (!(e.KeyChar<48 || e.KeyChar>59) && e.KeyChar!=8)
             {
                 e.Handled = true;
             }
