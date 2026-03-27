@@ -23,5 +23,21 @@ namespace TP1_GRUPO_6
         {
             main.Show();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text.Trim();
+            string apellido = txtApellido.Text.Trim();
+
+            if (nombre != " " && apellido != " ")
+            {
+                apellido += " " + nombre;
+                lsbElementos.Items.Add(apellido);
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un nombre y un apellido.", "Alerta");
+            }
+        }
     }
 }
