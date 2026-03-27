@@ -16,7 +16,7 @@ namespace TP1_GRUPO_6
         public Ejercicio2(Main main)
         {
             InitializeComponent();
-            this.main = new Main();
+            this.main = main;
         }
 
         private void Ejercicio2_FormClosed(object sender, FormClosedEventArgs e)
@@ -38,6 +38,14 @@ namespace TP1_GRUPO_6
             {
                 MessageBox.Show("Debe ingresar un nombre y un apellido.", "Alerta");
             }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (lsbElementos.SelectedItem != null)
+                lsbElementos.Items.Remove(lsbElementos.SelectedItem);
+            else
+                MessageBox.Show("Debe seleccionar un elemento para borrar.", "Alerta");
         }
     }
 }
