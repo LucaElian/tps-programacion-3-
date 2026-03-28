@@ -61,6 +61,24 @@ namespace TP1_GRUPO_6
                 MessageBox.Show("Ingrese nombre y apellido", "Alerta");
             }
 
+            if (nombre.Length == 0)
+            {
+                txtNombre.BackColor = Color.Red;
+            }
+            else
+            {
+                txtNombre.BackColor = SystemColors.Window;
+            }
+            if (apellido.Length == 0)
+            {
+                txtApellido.BackColor = Color.Red;
+            }
+            else
+            {
+                txtApellido.BackColor = SystemColors.Window;
+            }
+
+
 
 
             ///Esto es una version simple de la validacion de repetidos, pero preferi usar el foreach.

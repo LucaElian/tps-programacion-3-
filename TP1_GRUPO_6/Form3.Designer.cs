@@ -37,6 +37,7 @@
             this.gpbElementos = new System.Windows.Forms.GroupBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.lsbElementos = new System.Windows.Forms.ListBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.gpbNyA.SuspendLayout();
             this.gpbElementos.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.gpbNyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbNyA.Location = new System.Drawing.Point(28, 21);
             this.gpbNyA.Name = "gpbNyA";
-            this.gpbNyA.Size = new System.Drawing.Size(292, 455);
+            this.gpbNyA.Size = new System.Drawing.Size(292, 478);
             this.gpbNyA.TabIndex = 0;
             this.gpbNyA.TabStop = false;
             this.gpbNyA.Text = "Ingreso de datos";
@@ -130,13 +131,25 @@
             this.lsbElementos.Location = new System.Drawing.Point(20, 19);
             this.lsbElementos.Name = "lsbElementos";
             this.lsbElementos.Size = new System.Drawing.Size(253, 372);
+            this.lsbElementos.Sorted = true;
             this.lsbElementos.TabIndex = 0;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(277, 518);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(92, 23);
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
             // 
             // Ejercicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 553);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gpbElementos);
             this.Controls.Add(this.gpbNyA);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.GroupBox gpbElementos;
         private System.Windows.Forms.ListBox lsbElementos;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
