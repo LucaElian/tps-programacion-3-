@@ -29,15 +29,29 @@ namespace TP1_GRUPO_6
             string nombre = txtNombre.Text.Trim();
             string apellido = txtApellido.Text.Trim();
 
-            if (nombre != " " && apellido != " ")
+            if (nombre.Length > 0 && apellido.Length > 0)
             {
-                apellido += " " + nombre;
-                lsbElementos.Items.Add(apellido);
+                nombre = char.ToUpper(nombre[0]) + nombre.Substring(1).ToLower();
+                apellido = char.ToUpper(apellido[0]) + apellido.Substring(1).ToLower();
+
+                string AgregarItem = apellido + " " + nombre;
+
+                lsbElementos.Items.Add(AgregarItem);
             }
             else
             {
-                MessageBox.Show("Debe ingresar un nombre y un apellido.", "Alerta");
+                MessageBox.Show("Ingrese nombre y apellido", "Alerta");
             }
+
+            //if (nombre != "" && apellido != "")
+            //{
+            //    apellido += " " + nombre;
+            //   lsbElementos.Items.Add(apellido);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe ingresar un nombre y un apellido.", "Alerta");
+            //}
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
