@@ -36,12 +36,44 @@ namespace TP1_GRUPO_6
 
                 string AgregarItem = apellido + " " + nombre;
 
-                lsbElementos.Items.Add(AgregarItem);
+                bool repetido = false;
+
+                foreach(var item in lsbElementos.Items)
+                {
+                    if(item.ToString() == AgregarItem)
+                    {
+                        repetido = true;
+                        break;
+                    }
+                }
+                if (!repetido)
+                {
+                    lsbElementos.Items.Add(AgregarItem);
+                }
+                else
+                {
+                    MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
+                }        
+                    
             }
             else
             {
                 MessageBox.Show("Ingrese nombre y apellido", "Alerta");
             }
+
+
+
+            ///Esto es una version simple de la validacion de repetidos, pero preferi usar el foreach.
+            //if (!lsbElementos.Items.Contains(AgregarItem))
+            //{
+            //    lsbElementos.Items.Add(AgregarItem);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
+            //}
+
+
 
             //if (nombre != "" && apellido != "")
             //{
