@@ -38,9 +38,9 @@ namespace TP1_GRUPO_6
 
                 bool repetido = false;
 
-                foreach(var item in lsbElementos.Items)
+                foreach (var item in lsbElementos.Items)
                 {
-                    if(item.ToString() == AgregarItem)
+                    if (item.ToString() == AgregarItem)
                     {
                         repetido = true;
                         break;
@@ -53,8 +53,8 @@ namespace TP1_GRUPO_6
                 else
                 {
                     MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
-                }        
-                    
+                }
+
             }
             else
             {
@@ -111,5 +111,30 @@ namespace TP1_GRUPO_6
             else
                 MessageBox.Show("Debe seleccionar un elemento para borrar.", "Alerta");
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            main.Show();
+            this.Hide();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true; // Bloqueamos la tecla
+                MessageBox.Show("Solo se permiten letras y espacios.");
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true; // Bloqueamos la tecla
+                MessageBox.Show("Solo se permiten letras y espacios.");
+            }
+        }
     }
-}
+    }
+
