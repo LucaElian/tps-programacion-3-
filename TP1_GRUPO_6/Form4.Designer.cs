@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.gpbSexo = new System.Windows.Forms.GroupBox();
-            this.rdbFemenino = new System.Windows.Forms.RadioButton();
             this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.rdbFemenino = new System.Windows.Forms.RadioButton();
             this.gpbEstadoCivil = new System.Windows.Forms.GroupBox();
-            this.rdbCasado = new System.Windows.Forms.RadioButton();
             this.rdbSoltero = new System.Windows.Forms.RadioButton();
+            this.rdbCasado = new System.Windows.Forms.RadioButton();
+            this.cListBoxOficios = new System.Windows.Forms.CheckedListBox();
             this.gpbSexo.SuspendLayout();
             this.gpbEstadoCivil.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,18 @@
             this.gpbSexo.TabStop = false;
             this.gpbSexo.Text = "Sexo";
             // 
+            // rdbMasculino
+            // 
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMasculino.Location = new System.Drawing.Point(17, 67);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(86, 20);
+            this.rdbMasculino.TabIndex = 1;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
+            // 
             // rdbFemenino
             // 
             this.rdbFemenino.AutoSize = true;
@@ -62,18 +75,6 @@
             this.rdbFemenino.Text = "Femenino";
             this.rdbFemenino.UseVisualStyleBackColor = true;
             // 
-            // rdbMasculino
-            // 
-            this.rdbMasculino.AutoSize = true;
-            this.rdbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMasculino.Location = new System.Drawing.Point(17, 67);
-            this.rdbMasculino.Name = "rdbMasculino";
-            this.rdbMasculino.Size = new System.Drawing.Size(86, 20);
-            this.rdbMasculino.TabIndex = 1;
-            this.rdbMasculino.TabStop = true;
-            this.rdbMasculino.Text = "Masculino";
-            this.rdbMasculino.UseVisualStyleBackColor = true;
-            // 
             // gpbEstadoCivil
             // 
             this.gpbEstadoCivil.Controls.Add(this.rdbSoltero);
@@ -84,6 +85,17 @@
             this.gpbEstadoCivil.TabIndex = 1;
             this.gpbEstadoCivil.TabStop = false;
             this.gpbEstadoCivil.Text = "Estado Civil";
+            // 
+            // rdbSoltero
+            // 
+            this.rdbSoltero.AutoSize = true;
+            this.rdbSoltero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbSoltero.Location = new System.Drawing.Point(15, 67);
+            this.rdbSoltero.Name = "rdbSoltero";
+            this.rdbSoltero.Size = new System.Drawing.Size(68, 20);
+            this.rdbSoltero.TabIndex = 1;
+            this.rdbSoltero.Text = "Soltero";
+            this.rdbSoltero.UseVisualStyleBackColor = true;
             // 
             // rdbCasado
             // 
@@ -98,25 +110,30 @@
             this.rdbCasado.Text = "Casado";
             this.rdbCasado.UseVisualStyleBackColor = true;
             // 
-            // rdbSoltero
+            // cListBoxOficios
             // 
-            this.rdbSoltero.AutoSize = true;
-            this.rdbSoltero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbSoltero.Location = new System.Drawing.Point(15, 67);
-            this.rdbSoltero.Name = "rdbSoltero";
-            this.rdbSoltero.Size = new System.Drawing.Size(68, 20);
-            this.rdbSoltero.TabIndex = 1;
-            this.rdbSoltero.Text = "Soltero";
-            this.rdbSoltero.UseVisualStyleBackColor = true;
+            this.cListBoxOficios.FormattingEnabled = true;
+            this.cListBoxOficios.Items.AddRange(new object[] {
+            "Data Enty",
+            "Operador de PC",
+            "Programador",
+            "Reparador de PC",
+            "Tester"});
+            this.cListBoxOficios.Location = new System.Drawing.Point(149, 148);
+            this.cListBoxOficios.Name = "cListBoxOficios";
+            this.cListBoxOficios.Size = new System.Drawing.Size(201, 94);
+            this.cListBoxOficios.TabIndex = 3;
+            this.cListBoxOficios.UseCompatibleTextRendering = true;
             // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 398);
+            this.Controls.Add(this.cListBoxOficios);
             this.Controls.Add(this.gpbEstadoCivil);
             this.Controls.Add(this.gpbSexo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ejercicio3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio3";
@@ -137,5 +154,6 @@
         private System.Windows.Forms.GroupBox gpbEstadoCivil;
         private System.Windows.Forms.RadioButton rdbSoltero;
         private System.Windows.Forms.RadioButton rdbCasado;
+        private System.Windows.Forms.CheckedListBox cListBoxOficios;
     }
 }
