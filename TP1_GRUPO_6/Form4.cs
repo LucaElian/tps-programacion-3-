@@ -23,5 +23,19 @@ namespace TP1_GRUPO_6
         {
             main.Show();
         }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            string Sexo = "";
+            if (rdbFemenino.Checked)
+            {
+                Sexo = "Femenino";
+            }
+            else if (rdbMasculino.Checked)
+            {
+                Sexo = "Masculino";
+            }
+            
+        }
     }
 }

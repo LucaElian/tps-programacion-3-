@@ -35,6 +35,7 @@
             this.rdbSoltero = new System.Windows.Forms.RadioButton();
             this.rdbCasado = new System.Windows.Forms.RadioButton();
             this.cListBoxOficios = new System.Windows.Forms.CheckedListBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.gpbSexo.SuspendLayout();
             this.gpbEstadoCivil.SuspendLayout();
             this.SuspendLayout();
@@ -119,17 +120,28 @@
             "Programador",
             "Reparador de PC",
             "Tester"});
-            this.cListBoxOficios.Location = new System.Drawing.Point(149, 148);
+            this.cListBoxOficios.Location = new System.Drawing.Point(165, 161);
             this.cListBoxOficios.Name = "cListBoxOficios";
-            this.cListBoxOficios.Size = new System.Drawing.Size(201, 94);
+            this.cListBoxOficios.Size = new System.Drawing.Size(169, 94);
             this.cListBoxOficios.TabIndex = 3;
             this.cListBoxOficios.UseCompatibleTextRendering = true;
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(174, 272);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(150, 23);
+            this.btnMostrar.TabIndex = 4;
+            this.btnMostrar.Text = "Mostrar lo que se seleccionó";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 398);
+            this.ClientSize = new System.Drawing.Size(500, 442);
+            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.cListBoxOficios);
             this.Controls.Add(this.gpbEstadoCivil);
             this.Controls.Add(this.gpbSexo);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.RadioButton rdbSoltero;
         private System.Windows.Forms.RadioButton rdbCasado;
         private System.Windows.Forms.CheckedListBox cListBoxOficios;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }
