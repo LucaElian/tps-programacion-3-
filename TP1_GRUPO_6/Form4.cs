@@ -26,16 +26,15 @@ namespace TP1_GRUPO_6
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            string Sexo = "";
-            if (rdbFemenino.Checked)
+            string sexo = rdbFemenino.Checked ? "Femenino" : "Masculino";
+            string estadoCivil = rdbCasado.Checked ? "Casado" : "Soltero";
+            string oficios = "";
+            foreach(var item in cListBoxOficios.CheckedItems)
             {
-                Sexo = "Femenino";
+                oficios += "\n      - " + item.ToString();
             }
-            else if (rdbMasculino.Checked)
-            {
-                Sexo = "Masculino";
-            }
-            
+
+            lblResultado.Text = "Usted seleccionó los siguientes elementos: " + "\nSexo: " + sexo + "\nEstado civil: " + estadoCivil + "\nOficio/s: " + oficios;
         }
     }
 }
