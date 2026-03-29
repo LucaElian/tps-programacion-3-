@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +19,11 @@ namespace TP1_GRUPO_6
             this.main = main;
         }
 
+        private void tbnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Ejercicio1_FormClosed(object sender, FormClosedEventArgs e)
         {
             main.Show();
@@ -27,29 +31,22 @@ namespace TP1_GRUPO_6
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text.Trim();
-
-            while (nombre.Contains("  "))
-                nombre = nombre.Replace("  ", " ");
-
-            if (nombre.Length > 0)
+            if (!main.ValidarCampo(txtNombre))
             {
-                nombre = nombre.ToLower();
-                nombre = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombre);
-            }
-
-            if (nombre != "")
-            {
-                if (!lsbPersonas.Items.Contains(nombre))
-                    lsbPersonas.Items.Add(nombre);
-                else
-                    MessageBox.Show("Nombre repetido.", "Alerta");
-
-                txtNombre.Text = "";
-                txtNombre.Focus();
-            }
-            else
                 MessageBox.Show("Ingresar un nombre", "Alerta");
+                return;
+            }
+
+            string nombre = main.NormalizarNombre(txtNombre.Text);
+
+            if (!lsbPersonas.Items.Contains(nombre))
+                lsbPersonas.Items.Add(nombre);
+            else
+                MessageBox.Show("Nombre repetido.", "Alerta");
+
+            txtNombre.Text = "";
+            txtNombre.BackColor = System.Drawing.SystemColors.Control;
+            txtNombre.Focus();
         }
 
         private void btnPasarValor_Click(object sender, EventArgs e)
@@ -60,9 +57,7 @@ namespace TP1_GRUPO_6
                 lsbPersonas.Items.Remove(lsbPersonas.SelectedItem);
             }
             else
-            {
                 MessageBox.Show("Seleccionar un nombre", "Alerta");
-            }
         }
 
         private void btnPasarTodo_Click(object sender, EventArgs e)
@@ -70,30 +65,22 @@ namespace TP1_GRUPO_6
             if (lsbPersonas.Items.Count > 0)
             {
                 foreach (var item in lsbPersonas.Items)
-                {
                     lsbResultado.Items.Add(item);
-                }
 
                 lsbPersonas.Items.Clear();
             }
             else
-            {
-                MessageBox.Show("No hay nombres para transferir");
-            }
-        }
-
-        private void tbnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
+                MessageBox.Show("No hay nombres para transferir", "Alerta");
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar<48 || e.KeyChar>59) && e.KeyChar!=8)
-            {
-                e.Handled = true;
-            }
+            main.SoloLetras(e);
+        }
 
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            main.QuitarError(txtNombre);
         }
     }
 }

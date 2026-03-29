@@ -19,6 +19,11 @@ namespace TP1_GRUPO_6
             this.main = main;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Ejercicio2_FormClosed(object sender, FormClosedEventArgs e)
         {
             main.Show();
@@ -26,82 +31,33 @@ namespace TP1_GRUPO_6
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text.Trim();
-            string apellido = txtApellido.Text.Trim();
+            bool nombreValido = main.ValidarCampo(txtNombre);
+            bool apellidoValido = main.ValidarCampo(txtApellido);
 
-            if (nombre.Length > 0 && apellido.Length > 0)
+            if (!nombreValido || !apellidoValido)
             {
-                nombre = char.ToUpper(nombre[0]) + nombre.Substring(1).ToLower();
-                apellido = char.ToUpper(apellido[0]) + apellido.Substring(1).ToLower();
-
-                string AgregarItem = apellido + " " + nombre;
-
-                bool repetido = false;
-
-                foreach (var item in lsbElementos.Items)
-                {
-                    if (item.ToString() == AgregarItem)
-                    {
-                        repetido = true;
-                        break;
-                    }
-                }
-                if (!repetido)
-                {
-                    lsbElementos.Items.Add(AgregarItem);
-                }
+                MessageBox.Show("Debe completar todos los campos", "Alerta");
+                if (!nombreValido)
+                    txtNombre.Focus();
                 else
-                {
-                    MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
-                }
+                    txtApellido.Focus();
 
+                return;
             }
+
+            string nombre = main.NormalizarNombre(txtNombre.Text);
+            string apellido = main.NormalizarNombre(txtApellido.Text);
+
+            string completo = apellido + " " + nombre;
+
+            if (!lsbElementos.Items.Contains(completo))
+                lsbElementos.Items.Add(completo);
             else
-            {
-                MessageBox.Show("Ingrese nombre y apellido", "Alerta");
-            }
+                MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
 
-            if (nombre.Length == 0)
-            {
-                txtNombre.BackColor = Color.Red;
-            }
-            else
-            {
-                txtNombre.BackColor = SystemColors.Window;
-            }
-            if (apellido.Length == 0)
-            {
-                txtApellido.BackColor = Color.Red;
-            }
-            else
-            {
-                txtApellido.BackColor = SystemColors.Window;
-            }
-
-
-
-
-            ///Esto es una version simple de la validacion de repetidos, pero preferi usar el foreach.
-            //if (!lsbElementos.Items.Contains(AgregarItem))
-            //{
-            //    lsbElementos.Items.Add(AgregarItem);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("El nombre y apellido ya se encuentra en la lista.", "Alerta");
-            //}
-
-
-
-            //if (nombre != "" && apellido != "")
-            //{
-            //    apellido += " " + nombre;
-            //   lsbElementos.Items.Add(apellido);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe ingresar un nombre y un apellido.", "Alerta");
-            //}
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtNombre.Focus();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -112,29 +68,25 @@ namespace TP1_GRUPO_6
                 MessageBox.Show("Debe seleccionar un elemento para borrar.", "Alerta");
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            main.Show();
-            this.Hide();
+            main.QuitarError(txtNombre);
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            main.QuitarError(txtApellido);
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true; // Bloqueamos la tecla
-                MessageBox.Show("Solo se permiten letras y espacios.");
-            }
+            main.SoloLetras(e);
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true; // Bloqueamos la tecla
-                MessageBox.Show("Solo se permiten letras y espacios.");
-            }
+            main.SoloLetras(e);
         }
     }
-    }
+}
 
