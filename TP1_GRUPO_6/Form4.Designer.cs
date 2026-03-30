@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
             this.rdbMasculino = new System.Windows.Forms.RadioButton();
             this.rdbFemenino = new System.Windows.Forms.RadioButton();
@@ -38,6 +39,9 @@
             this.btnMostrar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.lblOtro = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtOtro = new System.Windows.Forms.TextBox();
             this.gpbSexo.SuspendLayout();
             this.gpbEstadoCivil.SuspendLayout();
             this.SuspendLayout();
@@ -122,12 +126,14 @@
             "Operador de PC",
             "Programador",
             "Reparador de PC",
-            "Tester"});
+            "Tester",
+            "Otro"});
             this.clbOficios.Location = new System.Drawing.Point(285, 146);
             this.clbOficios.Name = "clbOficios";
             this.clbOficios.Size = new System.Drawing.Size(232, 94);
             this.clbOficios.TabIndex = 3;
             this.clbOficios.UseCompatibleTextRendering = true;
+            this.clbOficios.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbOficios_ItemCheck);
             // 
             // btnMostrar
             // 
@@ -161,12 +167,37 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // lblOtro
+            // 
+            this.lblOtro.AutoSize = true;
+            this.lblOtro.Location = new System.Drawing.Point(572, 146);
+            this.lblOtro.Name = "lblOtro";
+            this.lblOtro.Size = new System.Drawing.Size(27, 13);
+            this.lblOtro.TabIndex = 9;
+            this.lblOtro.Text = "Otro";
+            this.lblOtro.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtOtro
+            // 
+            this.txtOtro.Location = new System.Drawing.Point(575, 163);
+            this.txtOtro.Name = "txtOtro";
+            this.txtOtro.Size = new System.Drawing.Size(189, 20);
+            this.txtOtro.TabIndex = 11;
+            this.txtOtro.Visible = false;
+            // 
             // Ejercicio3
             // 
             this.AcceptButton = this.btnMostrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 530);
+            this.Controls.Add(this.txtOtro);
+            this.Controls.Add(this.lblOtro);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnMostrar);
@@ -199,5 +230,8 @@
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblOtro;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtOtro;
     }
 }

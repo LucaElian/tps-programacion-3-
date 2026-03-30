@@ -29,6 +29,7 @@ namespace TP1_GRUPO_6
             main.Show();
         }
 
+
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             if (clbOficios.CheckedItems.Count == 0) 
@@ -38,12 +39,45 @@ namespace TP1_GRUPO_6
                 return;
             }
 
+            bool marcado = clbOficios.CheckedItems.Contains("Otro");
+
+            string texto = main.NormalizarNombre(txtOtro.Text);
+
+            if (marcado)
+            {
+                if (string.IsNullOrWhiteSpace(txtOtro.Text))
+                {
+                    lblResultado.Visible = false;
+                    MessageBox.Show("Si selecciono 'Otro', debe completar el texto", "Alerta");
+                    txtOtro.Focus();
+                    return;
+                }
+
+                foreach (var item in clbOficios.Items)
+                {
+                    string oficio = main.NormalizarNombre(item.ToString());
+
+                    if (oficio != "Otro" && texto == oficio)
+                    {
+                        lblResultado.Visible = false;
+                        MessageBox.Show("El oficio ingresado en 'Otro' ya existe");
+                        txtOtro.Focus();
+                        return;
+                    }
+                }
+            }
+
             string sexo = rdbFemenino.Checked ? "Femenino" : "Masculino";
             string estadoCivil = rdbCasado.Checked ? "Casado" : "Soltero";
             string oficios = "";
 
-            foreach (var item in clbOficios.CheckedItems)
-                oficios += "      - " + item.ToString() + "\n";
+            foreach (var item in clbOficios.CheckedItems) 
+            {
+                if (item.ToString() != "Otro")
+                    oficios += "      - " + item.ToString() + "\n";
+                else
+                    oficios += "      - " + char.ToUpper(texto.Trim()[0]) + texto.Trim().Substring(1).ToLower();
+            }
 
             string resultado = "Usted selecciono los siguientes elementos:\n";
             resultado += "Sexo: " + sexo + "\n";
@@ -52,6 +86,27 @@ namespace TP1_GRUPO_6
             
             lblResultado.Text = resultado;
             lblResultado.Visible = true;
+        }
+
+        private void clbOficios_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            string item = clbOficios.Items[e.Index].ToString();
+
+            if (item == "Otro")
+            {
+                if (e.NewValue == CheckState.Checked)
+                {
+                    lblOtro.Visible = true;
+                    txtOtro.Visible = true;
+                    txtOtro.Focus();
+                }
+                else
+                {
+                    txtOtro.Text = "";
+                    lblOtro.Visible = false;
+                    txtOtro.Visible = false;
+                }
+            }
         }
     }
 }
