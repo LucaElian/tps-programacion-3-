@@ -45,11 +45,9 @@
             // 
             this.gpbSexo.Controls.Add(this.rdbMasculino);
             this.gpbSexo.Controls.Add(this.rdbFemenino);
-            this.gpbSexo.Location = new System.Drawing.Point(69, 52);
-            this.gpbSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbSexo.Location = new System.Drawing.Point(52, 42);
             this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbSexo.Size = new System.Drawing.Size(180, 123);
+            this.gpbSexo.Size = new System.Drawing.Size(135, 100);
             this.gpbSexo.TabIndex = 0;
             this.gpbSexo.TabStop = false;
             this.gpbSexo.Text = "Sexo";
@@ -58,10 +56,9 @@
             // 
             this.rdbMasculino.AutoSize = true;
             this.rdbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMasculino.Location = new System.Drawing.Point(23, 82);
-            this.rdbMasculino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbMasculino.Location = new System.Drawing.Point(17, 67);
             this.rdbMasculino.Name = "rdbMasculino";
-            this.rdbMasculino.Size = new System.Drawing.Size(106, 24);
+            this.rdbMasculino.Size = new System.Drawing.Size(86, 20);
             this.rdbMasculino.TabIndex = 1;
             this.rdbMasculino.TabStop = true;
             this.rdbMasculino.Text = "Masculino";
@@ -72,10 +69,9 @@
             this.rdbFemenino.AutoSize = true;
             this.rdbFemenino.Checked = true;
             this.rdbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemenino.Location = new System.Drawing.Point(23, 38);
-            this.rdbFemenino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbFemenino.Location = new System.Drawing.Point(17, 31);
             this.rdbFemenino.Name = "rdbFemenino";
-            this.rdbFemenino.Size = new System.Drawing.Size(103, 24);
+            this.rdbFemenino.Size = new System.Drawing.Size(85, 20);
             this.rdbFemenino.TabIndex = 0;
             this.rdbFemenino.TabStop = true;
             this.rdbFemenino.Text = "Femenino";
@@ -85,11 +81,9 @@
             // 
             this.gpbEstadoCivil.Controls.Add(this.rdbSoltero);
             this.gpbEstadoCivil.Controls.Add(this.rdbCasado);
-            this.gpbEstadoCivil.Location = new System.Drawing.Point(411, 52);
-            this.gpbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbEstadoCivil.Location = new System.Drawing.Point(308, 42);
             this.gpbEstadoCivil.Name = "gpbEstadoCivil";
-            this.gpbEstadoCivil.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbEstadoCivil.Size = new System.Drawing.Size(185, 123);
+            this.gpbEstadoCivil.Size = new System.Drawing.Size(139, 100);
             this.gpbEstadoCivil.TabIndex = 1;
             this.gpbEstadoCivil.TabStop = false;
             this.gpbEstadoCivil.Text = "Estado Civil";
@@ -98,10 +92,9 @@
             // 
             this.rdbSoltero.AutoSize = true;
             this.rdbSoltero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbSoltero.Location = new System.Drawing.Point(20, 82);
-            this.rdbSoltero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbSoltero.Location = new System.Drawing.Point(15, 67);
             this.rdbSoltero.Name = "rdbSoltero";
-            this.rdbSoltero.Size = new System.Drawing.Size(83, 24);
+            this.rdbSoltero.Size = new System.Drawing.Size(68, 20);
             this.rdbSoltero.TabIndex = 1;
             this.rdbSoltero.Text = "Soltero";
             this.rdbSoltero.UseVisualStyleBackColor = true;
@@ -111,10 +104,9 @@
             this.rdbCasado.AutoSize = true;
             this.rdbCasado.Checked = true;
             this.rdbCasado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCasado.Location = new System.Drawing.Point(20, 38);
-            this.rdbCasado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbCasado.Location = new System.Drawing.Point(15, 31);
             this.rdbCasado.Name = "rdbCasado";
-            this.rdbCasado.Size = new System.Drawing.Size(87, 24);
+            this.rdbCasado.Size = new System.Drawing.Size(73, 20);
             this.rdbCasado.TabIndex = 0;
             this.rdbCasado.TabStop = true;
             this.rdbCasado.Text = "Casado";
@@ -129,19 +121,17 @@
             "Programador",
             "Reparador de PC",
             "Tester"});
-            this.cListBoxOficios.Location = new System.Drawing.Point(220, 198);
-            this.cListBoxOficios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cListBoxOficios.Location = new System.Drawing.Point(165, 161);
             this.cListBoxOficios.Name = "cListBoxOficios";
-            this.cListBoxOficios.Size = new System.Drawing.Size(224, 106);
+            this.cListBoxOficios.Size = new System.Drawing.Size(169, 79);
             this.cListBoxOficios.TabIndex = 3;
             this.cListBoxOficios.UseCompatibleTextRendering = true;
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(232, 335);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMostrar.Location = new System.Drawing.Point(174, 272);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(200, 28);
+            this.btnMostrar.Size = new System.Drawing.Size(150, 23);
             this.btnMostrar.TabIndex = 4;
             this.btnMostrar.Text = "Mostrar lo que se seleccionó";
             this.btnMostrar.UseVisualStyleBackColor = true;
@@ -151,27 +141,28 @@
             // 
             this.lblResultado.AutoSize = true;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(168, 383);
+            this.lblResultado.Location = new System.Drawing.Point(126, 311);
+            this.lblResultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(155, 20);
+            this.lblResultado.Size = new System.Drawing.Size(134, 17);
             this.lblResultado.TabIndex = 5;
             this.lblResultado.Text = "Label Resultados";
             // 
             // Ejercicio3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 544);
+            this.ClientSize = new System.Drawing.Size(500, 442);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.cListBoxOficios);
             this.Controls.Add(this.gpbEstadoCivil);
             this.Controls.Add(this.gpbSexo);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Ejercicio3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio3";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ejercicio3_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ejercicio3_FormClosed); 
             this.gpbSexo.ResumeLayout(false);
             this.gpbSexo.PerformLayout();
             this.gpbEstadoCivil.ResumeLayout(false);

@@ -29,12 +29,21 @@ namespace TP1_GRUPO_6
             string sexo = rdbFemenino.Checked ? "Femenino" : "Masculino";
             string estadoCivil = rdbCasado.Checked ? "Casado" : "Soltero";
             string oficios = "";
-            foreach(var item in cListBoxOficios.CheckedItems)
+            if (cListBoxOficios.SelectedItem != null)
             {
-                oficios += "\n      - " + item.ToString();
-            }
+                foreach (var item in cListBoxOficios.CheckedItems)
+                {
+                    oficios += "\n      - " + item.ToString();
+                }
 
-            lblResultado.Text = "Usted seleccionó los siguientes elementos: " + "\nSexo: " + sexo + "\nEstado civil: " + estadoCivil + "\nOficio/s: " + oficios;
+                lblResultado.Text = "Usted seleccionó los siguientes elementos: " + "\nSexo: " + sexo + "\nEstado civil: " + estadoCivil + "\nOficio/s: " + oficios;
+
+            }
+            else
+            {
+                MessageBox.Show("Debe de seleccionar al menos 1 oficio.");
+            }
         }
+        
     }
 }
