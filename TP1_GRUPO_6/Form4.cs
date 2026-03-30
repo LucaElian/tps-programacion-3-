@@ -19,6 +19,11 @@ namespace TP1_GRUPO_6
             this.main = main;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Ejercicio3_FormClosed(object sender, FormClosedEventArgs e)
         {
             main.Show();
@@ -26,24 +31,27 @@ namespace TP1_GRUPO_6
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            if (clbOficios.CheckedItems.Count == 0) 
+            {
+                lblResultado.Visible = false;
+                MessageBox.Show("Debe seleccionar al menos un oficio.", "Alerta");
+                return;
+            }
+
             string sexo = rdbFemenino.Checked ? "Femenino" : "Masculino";
             string estadoCivil = rdbCasado.Checked ? "Casado" : "Soltero";
             string oficios = "";
-            if (cListBoxOficios.SelectedItem != null)
-            {
-                foreach (var item in cListBoxOficios.CheckedItems)
-                {
-                    oficios += "\n      - " + item.ToString();
-                }
 
-                lblResultado.Text = "Usted seleccionó los siguientes elementos: " + "\nSexo: " + sexo + "\nEstado civil: " + estadoCivil + "\nOficio/s: " + oficios;
+            foreach (var item in clbOficios.CheckedItems)
+                oficios += "      - " + item.ToString() + "\n";
 
-            }
-            else
-            {
-                MessageBox.Show("Debe de seleccionar al menos 1 oficio.");
-            }
+            string resultado = "Usted selecciono los siguientes elementos:\n";
+            resultado += "Sexo: " + sexo + "\n";
+            resultado += "Estado civil: " + estadoCivil + "\n";
+            resultado += "Oficio/s:\n" + oficios;
+            
+            lblResultado.Text = resultado;
+            lblResultado.Visible = true;
         }
-        
     }
 }
