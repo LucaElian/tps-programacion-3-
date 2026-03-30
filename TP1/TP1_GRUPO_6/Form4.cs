@@ -48,7 +48,7 @@ namespace TP1_GRUPO_6
                 if (string.IsNullOrWhiteSpace(txtOtro.Text))
                 {
                     lblResultado.Visible = false;
-                    MessageBox.Show("Si selecciono 'Otro', debe completar el texto", "Alerta");
+                    MessageBox.Show("Debe completar el texto 'Otro'", "Alerta");
                     txtOtro.Focus();
                     return;
                 }
@@ -102,7 +102,7 @@ namespace TP1_GRUPO_6
                 }
                 else
                 {
-                    txtOtro.Text = "";
+                    txtOtro.Clear();
                     lblOtro.Visible = false;
                     txtOtro.Visible = false;
                 }
