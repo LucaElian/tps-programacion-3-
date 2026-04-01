@@ -48,8 +48,9 @@ namespace TP1_GRUPO_6
                 if (string.IsNullOrWhiteSpace(txtOtro.Text))
                 {
                     lblResultado.Visible = false;
-                    MessageBox.Show("Debe completar el texto 'Otro'", "Alerta");
                     txtOtro.Focus();
+                    txtOtro.BackColor = Color.Red;
+                    MessageBox.Show("Debe completar el texto 'Otro'", "Alerta");
                     return;
                 }
 
@@ -60,8 +61,10 @@ namespace TP1_GRUPO_6
                     if (oficio != "Otro" && texto == oficio)
                     {
                         lblResultado.Visible = false;
-                        MessageBox.Show("El oficio ingresado en 'Otro' ya existe");
+                        txtOtro.Text = "";
                         txtOtro.Focus();
+                        txtOtro.BackColor = Color.Red;
+                        MessageBox.Show("El oficio ingresado en 'Otro' ya existe");
                         return;
                     }
                 }
@@ -107,6 +110,11 @@ namespace TP1_GRUPO_6
                     txtOtro.Visible = false;
                 }
             }
+        }
+
+        private void txtOtro_TextChanged(object sender, EventArgs e)
+        {
+            main.QuitarError(txtOtro);
         }
     }
 }

@@ -189,6 +189,7 @@
             this.txtOtro.Size = new System.Drawing.Size(189, 20);
             this.txtOtro.TabIndex = 11;
             this.txtOtro.Visible = false;
+            this.txtOtro.TextChanged += new System.EventHandler(this.txtOtro_TextChanged);
             // 
             // Ejercicio3
             // 
